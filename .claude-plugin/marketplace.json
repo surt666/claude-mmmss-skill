@@ -1,0 +1,19 @@
+{
+  "name": "mmmss-marketplace",
+  "owner": {
+    "name": "Steen Larsen"
+  },
+  "metadata": {
+    "description": "Shareable Claude Code skill for working in Many More Much Smaller Steps.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "mmmss",
+      "source": "./plugins/mmmss",
+      "description": "Many More Much Smaller Steps: small ready-to-ready steps, one commit per step.",
+      "category": "development",
+      "keywords": ["mmmss", "small-steps", "workflow", "refactoring"]
+    }
+  ]
+}
