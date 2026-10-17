@@ -20,7 +20,7 @@ The skill activates automatically when an agent is about to change code, content
 Point Claude Code at this repo as a marketplace, then install the plugin:
 
 ```
-/plugin marketplace add <your-org>/claude-mmmss-skill
+/plugin marketplace add surt666/claude-mmmss-skill
 /plugin install mmmss@mmmss-marketplace
 ```
 
@@ -30,7 +30,7 @@ Or add it to a project's `.claude/settings.json` so everyone on the repo gets it
 {
   "extraKnownMarketplaces": {
     "mmmss-marketplace": {
-      "source": { "source": "github", "repo": "<your-org>/claude-mmmss-skill" }
+      "source": { "source": "github", "repo": "surt666/claude-mmmss-skill" }
     }
   },
   "enabledPlugins": ["mmmss@mmmss-marketplace"]
