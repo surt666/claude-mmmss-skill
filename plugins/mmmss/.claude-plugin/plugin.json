@@ -1,7 +1,7 @@
 {
   "name": "mmmss",
   "description": "Many More Much Smaller Steps (GeePaw Hill) for agents: walk a path of small steps that each go from ready to ready, check and commit every step, and restructure by expand, migrate, contract instead of one big change.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": {
     "name": "Steen Larsen"
   },

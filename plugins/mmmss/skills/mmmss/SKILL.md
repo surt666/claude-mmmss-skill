@@ -7,18 +7,18 @@ description: Use when about to change code, content, config or infrastructure in
 
 Walk a path of small steps, each from **ready** to **ready**. Edits with the check broken in between are one big step, however small each edit is. The user has authorised one local commit per step (current branch, no push).
 
-0. **Create Test** if no test exist create one, or ask for input to test, preferably in BDD format if it involves business rules. We should have tests for all steps. 
-1. **Define ready:** the check command (tests/build/lint) must pass and nothing user-visible gets worse. Run it first.
+1. **Define ready:** the check command (tests/build/lint) must pass and nothing user-visible gets worse. Run it first. No test covers the code you will touch? Add one that pins today's behaviour (green) as the first step.
 2. **List the steps** before editing. Each is ~15 min (max 1 h), one commit subject without "and", ends ready. No-value preparatory steps are fine.
-3. **Per step:** edit → check → green: stage only this step's files, commit → adjust remaining steps.
+3. **Per step:** test → edit → check → green: stage only this step's files, commit → adjust remaining steps. A behaviour change brings its test in the same step, Given/When/Then for business rules. Ask for examples only when the expected behaviour can't be read from the code or the request.
 4. **Red and not quickly fixed:** restore to the last commit, split smaller.
 5. **Restructures:** add new beside old → move callers/data over → delete old last. Refactor and behaviour change in separate steps.
-6. **Consolidate tests** if many very smal tests exist, that are no longer useful, clean them up or make them part of a larger whole
+6. **Tidy tests last:** merge tiny or overlapping tests into one that asserts the same things, in its own step. Never drop an assertion that is the only guard of a behaviour.
 
 | Thought | Reality |
 |---|---|
 | "Create all files, then test" | One big step. Add one, stay green, commit. |
 | "User said 'in one go'" | That's the destination, not the stride. |
 | "Too small for steps" | Then it's one step — still check and commit. |
+| "Write the failing test, commit, then the code" | Red commit. Test and code go in one step. |
 
 Never commit the user's pre-existing changes. Don't squash unless asked; offer at the end.
